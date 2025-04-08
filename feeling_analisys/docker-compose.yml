@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  feeling_analisys:
+    build: .
+    ports:
+      - "${external_port}:${internal_port}"
+    environment:
+      - ${jsonencode(environment)}
+    command: python api.py
